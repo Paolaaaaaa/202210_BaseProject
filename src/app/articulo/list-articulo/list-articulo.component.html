@@ -1,25 +1,39 @@
-<table>
-      <tr>
-        <th >#</th>
-        <th >Name</th>
-        <th >collection</th>
-        <th >price</th>
-      </tr>
-      <div *ngFor="let articulo of articulos">
-        <tr>
-            <td>
-              {{articulo.id}}
-            </td>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-            <td>{{articulo.name}}</td>
+<div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" >#</th>
+      <th scope="col" >Name</th>
+      <th scope="col" >collection</th>
+      <th scope="col" >price</th>
+    </tr>
 
-            <td>{{articulo.collection}}</td>
-            <td>{{articulo.price}}</td>
-        </tr>
-      </div>
-      <tr>
-        <h6>Average price: {{promCost}}</h6>
-      </tr>
+  </thead>
+        <tbody>
+
+          <div *ngFor="let articulo of articulos">
+            <tr  role= "button" (click) = "detail()">
+                <td scope="row">
+                  {{articulo.id}}
+                </td>
+
+                <td>{{articulo.name}}</td>
+
+                <td>{{articulo.collection}}</td>
+                <td >{{articulo.price}}</td>
+            </tr>
+          </div>
+          <tr>
+            <h6>Average price: {{promCost}}</h6>
+          </tr>
+
+
+
+
+        </tbody>
+
 </table>
-
+</div>
 

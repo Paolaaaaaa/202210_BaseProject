@@ -47,6 +47,12 @@ export class ListArticuloComponent implements OnInit {
   }
 
 
+  detail():void
+  {
+
+  }
+
+
 
 
 }
