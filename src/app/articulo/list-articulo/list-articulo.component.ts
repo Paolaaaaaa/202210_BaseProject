@@ -10,6 +10,7 @@ import { ArticuloService } from '../articulo.service';
 export class ListArticuloComponent implements OnInit {
 
   articulos: Array<Articulo>=[];
+  promCost : number=0;
 
 
   constructor( private articuloService: ArticuloService) { }
@@ -27,6 +28,22 @@ export class ListArticuloComponent implements OnInit {
       this.articulos =articulo;
 
     });
+    this.avgPrice();
+
+  }
+
+
+  avgPrice(): void
+  {
+    let totalArticulo: number =0;
+    let promedio: number= 0;
+    this.articulos.forEach((articulo)=> totalArticulo=articulo.price+totalArticulo);
+    promedio = totalArticulo/this.articulos.length;
+
+
+    this.promCost = promedio;
+
+
   }
 
 
