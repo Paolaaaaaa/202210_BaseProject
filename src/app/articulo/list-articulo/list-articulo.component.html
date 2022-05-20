@@ -22,18 +22,16 @@
 
     </thead>
           <tbody>
-
-     <div *ngFor="let articulo of articulos">
+     <tr *ngFor="let articulo of articulos">
               <div  role= "button" (click) = "detail( articulo)" style="border: 100px;">
-                <tr>
 
                  <th>{{articulo.id}}</th>
                   <td>{{articulo.name}}</td>
                   <td>{{articulo.collection}}</td>
-                  <td >{{articulo.price}}</td>
-                </tr>
+                  <td>{{articulo.price}}</td>
               </div>
-      </div>
+
+            </tr>
             <div *ngIf="totalArticulos!=0  ">
               <tr>
                 <th colspan="4"><h6>Average price: {{promCost}}</h6></th>
