@@ -13,7 +13,8 @@ export class ListArticuloComponent implements OnInit {
   promCost : number=0;
   selected: boolean = false;
   selectedArticulo!:Articulo;
-
+  totalArticulos: number=0;
+  avgListo: boolean= true;
 
   constructor( private articuloService: ArticuloService) { }
 
@@ -22,18 +23,25 @@ export class ListArticuloComponent implements OnInit {
     this.avgPrice();
 
 
+
   }
 
   avgPrice(): void
   {
-    let totalArticulo: number =0;
-    this.articulos.forEach((articulo)=> totalArticulo=articulo.price+totalArticulo);
-    this.promCost = totalArticulo/this.articulos.length;
-    console.log(totalArticulo);
-    console.log(this.promCost);
-    console.log(this.articulos);
+    this.totalArticulos =0;
+    this.articulos.forEach((articulo)=> this.totalArticulos=articulo.price+ this.totalArticulos);
+    this.promCost = (this.totalArticulos.valueOf()/(this.articulos.length).valueOf());
 
 
+
+
+
+  }
+  setArticulos (): void
+  {
+    this.getarticulos();
+    this.avgPrice();
+    this.avgListo =true;
 
 
   }
@@ -46,6 +54,8 @@ export class ListArticuloComponent implements OnInit {
 
     });
 
+
+
   }
 
 
@@ -56,6 +66,7 @@ export class ListArticuloComponent implements OnInit {
   {
     this.selected = true;
     this.selectedArticulo = articulo;
+    this.avgPrice();
 
 
   }

@@ -1,18 +1,17 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-  <div style="display: inline-flex;">
+  <div  class="container" style="display: flex ; column-gap: 100px;">
 
 
 
 
 
 
-  <div class="row 1">
 
 
 
-
-  <table class="table">
+    <div class="leftColumn">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th scope="col" >#</th>
@@ -24,20 +23,26 @@
     </thead>
           <tbody>
 
+     <div *ngFor="let articulo of articulos">
+              <div  role= "button" (click) = "detail( articulo)" style="border: 100px;">
+                <tr>
 
-            <div *ngFor="let articulo of articulos">
-              <tr  role= "button" (click) = "detail( articulo)">
-                  <th scope="row">{{articulo.id}}</th>
+                 <th>{{articulo.id}}</th>
                   <td>{{articulo.name}}</td>
                   <td>{{articulo.collection}}</td>
                   <td >{{articulo.price}}</td>
+                </tr>
+              </div>
+      </div>
+            <div *ngIf="totalArticulos!=0  ">
+              <tr>
+                <th colspan="4"><h6>Average price: {{promCost}}</h6></th>
               </tr>
+
+
+
             </div>
 
-
-            <tr>
-              <th><h6>Average price: {{promCost}}</h6></th>
-            </tr>
 
 
 
@@ -48,7 +53,7 @@
   </div>
 
 
-<div class = "row 2">
+<div class = "rightColumn">
 
   <div *ngIf="selected">
     <app-articulo-detail [articuloDetail]=" selectedArticulo"></app-articulo-detail>
