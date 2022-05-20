@@ -21,14 +21,14 @@
       </tr>
 
     </thead>
-          <tbody>
+    <tbody>
      <tr *ngFor="let articulo of articulos">
               <div  role= "button" (click) = "detail( articulo)" style="border: 100px;">
 
-                 <th>{{articulo.id}}</th>
-                  <td>{{articulo.name}}</td>
-                  <td>{{articulo.collection}}</td>
-                  <td>{{articulo.price}}</td>
+                 <th> <p>{{articulo.id}} </p></th>
+                  <td> <p>{{articulo.name}}</p></td>
+                  <td><p>{{articulo.collection}}</p></td>
+                  <td><p>{{articulo.price}}</p></td>
               </div>
 
             </tr>

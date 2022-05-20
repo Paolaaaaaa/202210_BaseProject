@@ -19,6 +19,21 @@ td
 
 table {
   border-collapse: collapse;
+  justify-content: left;
+  align-content: left;
+  table-layout:inherit;
+  width: 400px;
+  border: 1;
+}
+thead
+{
+  width: 400px;
 }
 
+tbody
+{
+  align-items: center;
+}
+td {padding:10px; border-right:1px solid rgb(0, 0, 0);}
+tr { border-bottom:1px solid rgb(0, 0, 0) }
 
