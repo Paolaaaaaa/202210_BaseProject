@@ -11,12 +11,29 @@ export class ListArticuloComponent implements OnInit {
 
   articulos: Array<Articulo>=[];
   promCost : number=0;
+  selected: boolean = false;
+  selectedArticulo!:Articulo;
 
 
   constructor( private articuloService: ArticuloService) { }
 
   ngOnInit() {
     this.getarticulos();
+    this.avgPrice();
+
+
+  }
+
+  avgPrice(): void
+  {
+    let totalArticulo: number =0;
+    this.articulos.forEach((articulo)=> totalArticulo=articulo.price+totalArticulo);
+    this.promCost = totalArticulo/this.articulos.length;
+    console.log(totalArticulo);
+    console.log(this.promCost);
+    console.log(this.articulos);
+
+
 
 
   }
@@ -28,27 +45,18 @@ export class ListArticuloComponent implements OnInit {
       this.articulos =articulo;
 
     });
-    this.avgPrice();
 
   }
 
 
-  avgPrice(): void
+
+
+
+  detail(articulo: Articulo):void
   {
-    let totalArticulo: number =0;
-    let promedio: number= 0;
-    this.articulos.forEach((articulo)=> totalArticulo=articulo.price+totalArticulo);
-    promedio = totalArticulo/this.articulos.length;
+    this.selected = true;
+    this.selectedArticulo = articulo;
 
-
-    this.promCost = promedio;
-
-
-  }
-
-
-  detail():void
-  {
 
   }
 

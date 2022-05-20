@@ -1,0 +1,35 @@
+<div class="container-fluid_Detail">
+  <div class="modal-content">
+    <h2 class="modal-header">{{articuloDetail.name}}</h2>
+
+        <img class = "img-thumbnail"
+          src="{{ articuloDetail.image }}"
+          alt="{{ articuloDetail.image }}">
+
+    <div class="modal-body">
+      <dl>
+
+        <dt> Codigo del producto:</dt>
+        <dd>{{ articuloDetail.id }}</dd>
+        <hr />
+        <dt> name del producto</dt>
+        <dd>{{ articuloDetail.name }}</dd>
+        <hr />
+        <dt class="bold"> Descripcion: </dt>
+        <dd class="caption">{{ articuloDetail.description }}</dd>
+        <hr />
+        <dt class="bold"> Costo: </dt>
+        <dd class = "caption">{{ articuloDetail.price |currency:"COP ":"symbol"}}</dd>
+        <hr />
+        <dt class="bold"> Disponibilidad: </dt>
+        <dd class = "caption">{{ articuloDetail.collection}}</dd>
+        <hr />
+
+
+
+
+      </dl>
+    </div>
+  </div>
+ </div>
+

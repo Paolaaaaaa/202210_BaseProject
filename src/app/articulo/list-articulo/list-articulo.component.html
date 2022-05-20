@@ -1,6 +1,17 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+<div *ngIf="selected">
+  <app-articulo-detail [articuloDetail]=" selectedArticulo"></app-articulo-detail>
+</div>
+
+
+
 <div>
+
+
+
+
+
 <table class="table">
   <thead>
     <tr>
@@ -13,11 +24,12 @@
   </thead>
         <tbody>
 
+
           <div *ngFor="let articulo of articulos">
-            <tr  role= "button" (click) = "detail()">
-                <td scope="row">
+            <tr  role= "button" (click) = "detail( articulo)">
+                <th scope="row">
                   {{articulo.id}}
-                </td>
+                </th>
 
                 <td>{{articulo.name}}</td>
 
@@ -25,8 +37,10 @@
                 <td >{{articulo.price}}</td>
             </tr>
           </div>
+
+
           <tr>
-            <h6>Average price: {{promCost}}</h6>
+            <th><h6>Average price: {{promCost}}</h6></th>
           </tr>
 
 
