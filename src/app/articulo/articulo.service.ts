@@ -12,7 +12,7 @@ export class ArticuloService {
 
 
 
-  getSeries ():Observable<Articulo[]>
+  getArticulos ():Observable<Articulo[]>
   {
       var url = 'https://raw.githubusercontent.com/Uniandes-isis2603/recursos-isis2603/master/json/clothingitems.json ';
       return this.http.get<Articulo[]> (url);

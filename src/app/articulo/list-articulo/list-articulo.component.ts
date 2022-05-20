@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Articulo } from '../articulo';
+import { ArticuloService } from '../articulo.service';
 
 @Component({
   selector: 'app-list-articulo',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListArticuloComponent implements OnInit {
 
-  constructor() { }
+  articulos: Array<Articulo>=[];
+
+
+  constructor( private articuloService: ArticuloService) { }
 
   ngOnInit() {
+    this.getarticulos();
+
+
   }
+
+  getarticulos():void
+  {
+    this.articuloService.getArticulos().subscribe((articulo)=>
+    {
+      this.articulos =articulo;
+
+    });
+  }
+
+
+
 
 }

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ArticuloComponent } from './articulo.component';
-
+import { ListArticuloComponent } from './list-articulo/list-articulo.component';
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [ListArticuloComponent],
+  exports:[ListArticuloComponent]
 })
 export class ArticuloModule { }
