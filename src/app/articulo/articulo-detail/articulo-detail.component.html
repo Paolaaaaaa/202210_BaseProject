@@ -9,21 +9,18 @@
     <div class="modal-body">
       <dl>
 
-        <dt> Codigo del producto:</dt>
-        <dd>{{ articuloDetail.id }}</dd>
-        <hr />
+
         <dt> name del producto</dt>
         <dd>{{ articuloDetail.name }}</dd>
+        <hr />
+
+        <dt class="bold"> Collection: </dt>
+        <dd class = "caption">{{ articuloDetail.collection}}</dd>
         <hr />
         <dt class="bold"> Descripcion: </dt>
         <dd class="caption">{{ articuloDetail.description }}</dd>
         <hr />
-        <dt class="bold"> Costo: </dt>
-        <dd class = "caption">{{ articuloDetail.price |currency:"COP ":"symbol"}}</dd>
-        <hr />
-        <dt class="bold"> Disponibilidad: </dt>
-        <dd class = "caption">{{ articuloDetail.collection}}</dd>
-        <hr />
+
 
 
 

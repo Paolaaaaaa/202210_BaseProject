@@ -3,3 +3,20 @@ img
   max-height: 200px;
   max-width: 200px;
 }
+
+.container-fluid_Detail
+{
+  max-width: 500 px;
+  max-height: 300 px;
+  position: relative;
+
+}
+
+.modal-content
+{
+  max-width: 500px;
+
+  max-height: 300 px;
+  position: relative;
+
+}

@@ -1,53 +1,62 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<div *ngIf="selected">
-  <app-articulo-detail [articuloDetail]=" selectedArticulo"></app-articulo-detail>
-</div>
-
-
-
-<div>
+  <div style="display: inline-flex;">
 
 
 
 
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col" >#</th>
-      <th scope="col" >Name</th>
-      <th scope="col" >collection</th>
-      <th scope="col" >price</th>
-    </tr>
 
-  </thead>
-        <tbody>
+  <div class="row 1">
 
 
-          <div *ngFor="let articulo of articulos">
-            <tr  role= "button" (click) = "detail( articulo)">
-                <th scope="row">
-                  {{articulo.id}}
-                </th>
 
-                <td>{{articulo.name}}</td>
 
-                <td>{{articulo.collection}}</td>
-                <td >{{articulo.price}}</td>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" >#</th>
+        <th scope="col" >Name</th>
+        <th scope="col" >collection</th>
+        <th scope="col" >price</th>
+      </tr>
+
+    </thead>
+          <tbody>
+
+
+            <div *ngFor="let articulo of articulos">
+              <tr  role= "button" (click) = "detail( articulo)">
+                  <th scope="row">{{articulo.id}}</th>
+                  <td>{{articulo.name}}</td>
+                  <td>{{articulo.collection}}</td>
+                  <td >{{articulo.price}}</td>
+              </tr>
+            </div>
+
+
+            <tr>
+              <th><h6>Average price: {{promCost}}</h6></th>
             </tr>
-          </div>
-
-
-          <tr>
-            <th><h6>Average price: {{promCost}}</h6></th>
-          </tr>
 
 
 
 
-        </tbody>
+          </tbody>
 
-</table>
+  </table>
+  </div>
+
+
+<div class = "row 2">
+
+  <div *ngIf="selected">
+    <app-articulo-detail [articuloDetail]=" selectedArticulo"></app-articulo-detail>
+  </div>
+
 </div>
 
+
+
+
+</div>
